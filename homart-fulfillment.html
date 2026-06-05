@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Homart Fulfillment — Case Study | Alik Sarkar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#07080F;--surf:#0E1120;--surf2:#141726;
+  --text:#F0F4FF;--muted:#8892B0;--dim:#3D4466;
+  --accent:#06B6D4;
+  --violet:#7C3AED;--cyan:#06B6D4;
+  --border:rgba(255,255,255,0.08);
+  --f-display:'Instrument Serif',Georgia,serif;
+  --f-head:'Syne',system-ui,sans-serif;
+  --f-body:'DM Sans',system-ui,sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--f-body);font-size:16px;line-height:1.6;overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1.25rem,5vw,4rem);height:68px;background:rgba(7,8,15,0.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.back-link{display:inline-flex;align-items:center;gap:0.5rem;color:var(--muted);text-decoration:none;font-family:var(--f-head);font-size:0.78rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;transition:color 0.2s}
+.back-link:hover{color:var(--text)}
+.back-link svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round}
+.nav-title{font-family:var(--f-head);font-size:0.82rem;font-weight:700;color:var(--text);letter-spacing:-0.01em}
+
+/* HERO */
+
+.cs-hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 20% 50%,rgba(6,182,212,0.12),transparent 70%);pointer-events:none}
+.cs-hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.03) 1px,transparent 1px);background-size:50px 50px;mask-image:radial-gradient(ellipse 60% 80% at 10% 50%,black,transparent);pointer-events:none}
+
+.cs-num{color:var(--accent)}
+
+.cs-title em{font-style:italic;color:var(--accent)}
+
+.cs-tag{font-family:var(--f-head);font-size:0.68rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:0.3rem 0.75rem;border-radius:5px}
+.cs-tag-a{background:rgba(6,182,212,0.12);color:var(--accent);border:1px solid rgba(6,182,212,0.3)}
+.cs-tag-b{background:rgba(6,182,212,0.08);color:#67E8F9;border:1px solid rgba(6,182,212,0.2)}
+
+/* CONTENT */
+
+.body-text+
+
+/* Solutions */
+
+/* Deliverables */
+
+/* Context card */
+
+/* Problem card */
+
+/* Prev/Next */
+
+/* Mockup placeholder */
+
+@media(max-width:768px){
+  
+  
+  
+  nav{padding:0 1.25rem}
+  
+  
+}
+
+.cs-nav-links{display:none}}
+
+.mobile-menu{display:none;position:fixed;top:68px;right:0;bottom:0;width:min(290px,85vw);z-index:595}
+.mobile-menu.open{display:flex}
+
+.mobile-menu.open 
+
+@media(max-width:768px){.cs-nav-links{display:none!important}}
+
+/* Overlay — solid black, ABOVE everything */
+
+/* Drawer wrapper */
+
+/* Card — fully opaque, no transparency */
+
+/* Nav links */
+
+@media(max-width:768px){
+  
+  .cs-nav-links{display:none !important}
+}
+
+/* Fix hero stacking context so it can never override drawer */
+
+@media(max-width:768px){
+  
+  .cs-nav-links{display:none !important}
+}
+
+/* ══ HERO & LAYOUT PADDING FIX ══ */
+.cs-hero{
+  padding: 100px clamp(1.5rem,6vw,6rem) 80px !important;
+  transform:none!important;
+  will-change:auto!important;
+  isolation:auto!important;
+  position:relative;
+  overflow:hidden;
+  border-bottom:1px solid var(--border, rgba(255,255,255,0.08));
+}
+.cs-eyebrow{margin-bottom:1.25rem}
+.cs-title{
+  font-family:var(--f-display,'Instrument Serif',Georgia,serif);
+  font-size:clamp(2.4rem,6vw,4.5rem);
+  line-height:1.06;
+  letter-spacing:-0.03em;
+  margin-bottom:1.25rem;
+}
+.cs-tags{
+  display:flex;gap:0.5rem;flex-wrap:wrap;
+  margin-bottom:2rem;
+}
+.meta-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+  gap:1px;
+  background:rgba(255,255,255,0.07);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:12px;
+  overflow:hidden;
+  max-width:680px;
+  margin-bottom:0;
+}
+.meta-cell{
+  background:#0E1120;
+  padding:1rem 1.25rem;
+}
+.meta-label{
+  font-family:'Syne',sans-serif;
+  font-size:0.6rem;font-weight:700;
+  letter-spacing:0.14em;text-transform:uppercase;
+  color:#8892B0;margin-bottom:0.35rem;
+}
+.meta-val{
+  font-size:0.875rem;
+  color:#F0F4FF;font-weight:500;
+  line-height:1.4;
+}
+.live-link{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  margin-top:1.75rem;
+  padding:0.85rem 1.75rem;
+  background:var(--accent,#7C3AED);
+  color:#FFFFFF;
+  border:none;
+  border-radius:10px;
+  font-family:'Syne',sans-serif;
+  font-size:0.82rem;font-weight:800;
+  letter-spacing:0.06em;text-transform:uppercase;
+  text-decoration:none;
+  cursor:pointer;
+  transition:all 0.22s;
+  box-shadow:0 6px 22px -4px rgba(124,58,237,0.5);
+}
+.live-link:hover{
+  background:#6D28D9;
+  transform:translateY(-2px);
+  box-shadow:0 10px 28px -4px rgba(124,58,237,0.65);
+}
+.live-link svg{width:15px;height:15px;stroke:#fff;fill:none;stroke-width:2;stroke-linecap:round;flex-shrink:0}
+
+/* Body padding */
+.cs-body{
+  max-width:980px;
+  margin:0 auto;
+  padding:0 clamp(1.5rem,6vw,6rem) !important;
+}
+.cs-section{
+  padding:3.5rem 0;
+  border-bottom:1px solid rgba(255,255,255,0.07);
+}
+.cs-section:last-child{border-bottom:none}
+
+/* Section labels */
+.s-label{
+  font-family:'Syne',sans-serif;
+  font-size:0.62rem;font-weight:700;
+  letter-spacing:0.18em;text-transform:uppercase;
+  color:var(--accent,#7C3AED);
+  margin-bottom:0.85rem;
+  display:flex;align-items:center;gap:0.6rem;
+}
+.s-label::after{
+  content:'';flex:0 0 28px;height:1px;
+  background:var(--accent,#7C3AED);opacity:0.45;
+}
+h2{
+  font-family:'Instrument Serif',Georgia,serif;
+  font-size:clamp(1.6rem,3vw,2.2rem);
+  letter-spacing:-0.025em;
+  color:#F0F4FF;margin-bottom:1rem;line-height:1.2;
+}
+h2 em{font-style:italic;color:var(--accent,#7C3AED)}
+.body-text{
+  color:#8892B0;font-size:0.95rem;
+  line-height:1.85;font-weight:300;max-width:680px;
+}
+.body-text + .body-text{margin-top:1rem}
+
+/* Solution grid */
+.sol-grid{
+  display:flex;flex-direction:column;gap:0;
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:14px;overflow:hidden;margin-top:1.75rem;
+}
+.sol-item{
+  display:flex;gap:1.5rem;padding:1.75rem 2rem;
+  border-bottom:1px solid rgba(255,255,255,0.07);
+  background:#0E1120;transition:background 0.2s;
+  align-items:flex-start;
+}
+.sol-item:last-child{border-bottom:none}
+.sol-item:hover{background:#141726}
+.sol-num{
+  font-family:'Instrument Serif',Georgia,serif;
+  font-size:2rem;font-style:italic;
+  color:rgba(124,58,237,0.2);
+  line-height:1;flex-shrink:0;width:40px;
+}
+.sol-title{
+  font-family:'Syne',sans-serif;
+  font-size:0.95rem;font-weight:700;
+  color:#F0F4FF;margin-bottom:0.5rem;
+}
+.sol-desc{
+  font-size:0.875rem;color:#8892B0;
+  line-height:1.75;font-weight:300;
+}
+
+/* Deliverables */
+.del-grid{display:flex;flex-wrap:wrap;gap:0.65rem;margin-top:1.5rem}
+.del-pill{
+  display:inline-flex;align-items:center;gap:0.45rem;
+  padding:0.55rem 1rem;
+  background:#0E1120;
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:8px;
+  font-family:'Syne',sans-serif;font-size:0.78rem;font-weight:600;
+  color:#F0F4FF;
+}
+.del-pill svg{width:12px;height:12px;stroke:var(--accent,#7C3AED);flex-shrink:0}
+
+/* Cards */
+.context-card{
+  background:#0E1120;
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:14px;padding:2rem;
+  margin-top:1.5rem;position:relative;overflow:hidden;
+}
+.context-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--accent,#7C3AED),transparent);
+}
+.problem-card{
+  background:rgba(244,63,94,0.05);
+  border:1px solid rgba(244,63,94,0.15);
+  border-radius:14px;padding:2rem;margin-top:1.5rem;
+}
+.problem-icon{
+  width:40px;height:40px;border-radius:10px;
+  background:rgba(244,63,94,0.1);
+  border:1px solid rgba(244,63,94,0.2);
+  display:flex;align-items:center;justify-content:center;margin-bottom:1rem;
+}
+.problem-icon svg{width:18px;height:18px;stroke:#F43F5E;fill:none;stroke-width:1.5;stroke-linecap:round}
+.mockup-placeholder{
+  background:#0E1120;border:1px solid rgba(255,255,255,0.08);
+  border-radius:14px;padding:3rem;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:1rem;margin-top:1.5rem;min-height:260px;
+}
+.mockup-icon{font-size:2.5rem}
+.mockup-label{
+  font-family:'Syne',sans-serif;font-size:0.75rem;font-weight:700;
+  letter-spacing:0.1em;text-transform:uppercase;color:#3D4466;
+}
+.mockup-sub{
+  font-size:0.8rem;color:#3D4466;
+  text-align:center;max-width:300px;line-height:1.6;
+}
+
+/* Prev/Next nav */
+.case-nav{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:2.5rem clamp(1.5rem,6vw,6rem);
+  border-top:1px solid rgba(255,255,255,0.07);
+  gap:1rem;flex-wrap:wrap;
+}
+.nav-btn{
+  display:inline-flex;align-items:center;gap:0.5rem;
+  padding:0.75rem 1.25rem;
+  background:#0E1120;
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:10px;
+  font-family:'Syne',sans-serif;font-size:0.78rem;font-weight:700;
+  letter-spacing:0.04em;color:#F0F4FF;text-decoration:none;
+  transition:all 0.2s;
+}
+.nav-btn:hover{border-color:var(--accent,#7C3AED);color:var(--accent,#7C3AED)}
+.nav-btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round}
+
+/* Mobile responsiveness */
+@media(max-width:768px){
+  .cs-hero{padding:96px 1.25rem 60px !important}
+  .cs-body{padding:0 1.25rem !important}
+  .cs-section{padding:2.25rem 0}
+  .meta-grid{grid-template-columns:1fr 1fr}
+  .sol-item{flex-direction:column;gap:0.75rem;padding:1.25rem}
+  .case-nav{padding:2rem 1.25rem}
+  .cs-title{font-size:clamp(2rem,8vw,3rem)}
+}
+@media(max-width:480px){
+  .cs-hero{padding:90px 1rem 50px !important}
+  .cs-body{padding:0 1rem !important}
+  .meta-grid{grid-template-columns:1fr}
+  .case-nav{flex-direction:column;align-items:stretch}
+  .nav-btn{justify-content:center}
+}
+
+</style>
+</head>
+<body>
+<div id="cs-topbar" style="position:fixed;top:0;left:0;right:0;z-index:1000;height:60px;display:flex;align-items:center;padding:0 clamp(1.5rem,5vw,4rem);background:rgba(7,8,15,0.97);backdrop-filter:blur(20px);border-bottom:1px solid rgba(124,58,237,0.18);"><a href="portfolio_3d.html" style="display:inline-flex;align-items:center;gap:8px;color:#8892B0;text-decoration:none;font-family:'Syne',sans-serif;font-size:0.78rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;" onmouseover="this.style.color='#F0F4FF'" onmouseout="this.style.color='#8892B0'"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10 3L5 8l5 5"/></svg>← Back to Portfolio</a></div>
+
+
+<!-- HERO -->
+<section class="cs-hero">
+  <div class="cs-hero-bg"></div>
+  <div class="cs-hero-grid"></div>
+  <div class="cs-eyebrow"><span class="cs-num">02</span> Case Study</div>
+  <h1 class="cs-title"><em>📦 Homart Fulfillment</em></h1>
+  <div class="cs-tags">
+    <span class="cs-tag cs-tag-a">Logistics & Supply Chain</span>
+    <span class="cs-tag cs-tag-b">Dashboard Design</span>
+  </div>
+  <div class="meta-grid">
+    <div class="meta-cell"><div class="meta-label">Role</div><div class="meta-val">UX/UI Architect</div></div>
+    <div class="meta-cell"><div class="meta-label">Timeline</div><div class="meta-val">6 Weeks</div></div>
+    <div class="meta-cell"><div class="meta-label">Tools</div><div class="meta-val">Figma, FigJam</div></div>
+    <div class="meta-cell"><div class="meta-label">Live URL</div><div class="meta-val">homartfulfillment.com</div></div>
+  </div>
+  <a href="https://homartfulfillment.com/" target="_blank" class="live-link">
+    <svg viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+      <circle cx="9" cy="9" r="7"/>
+      <path d="M9 2c-2.5 2.5-2.5 11 0 14M9 2c2.5 2.5 2.5 11 0 14M2 9h14"/>
+    </svg>
+    Visit Live Site →
+  </a>
+</section>
+
+<div class="cs-body">
+
+  <!-- CONTEXT -->
+  <div class="cs-section">
+    <div class="s-label">Project Context</div>
+    <h2>About <em>Homart Fulfillment</em></h2>
+    <div class="context-card">
+      <p class="body-text">Homart Fulfillment is a premium 3PL (Third-Party Logistics) provider operating across Canada and the US, specializing in e-commerce warehousing, same-day shipping, and reverse logistics. As the UX/UI Architect, I designed both the public digital presence and the structural UX infrastructure for clients interacting with the fulfillment center.</p>
+    </div>
+  </div>
+
+  <!-- PROBLEM -->
+  <div class="cs-section">
+    <div class="s-label">The Challenge</div>
+    <h2>What Was <em>Broken</em></h2>
+    <div class="problem-card">
+      <div class="problem-icon">
+        <svg viewBox="0 0 18 18"><path d="M9 3v6M9 12v1.5M3.5 15.5h11a1 1 0 0 0 .87-1.5L9.87 3a1 1 0 0 0-1.74 0L2.63 14a1 1 0 0 0 .87 1.5z"/></svg>
+      </div>
+      <p class="body-text">The logistics industry is notoriously bogged down by dense, unreadable tables, chaotic tracking numbers, and fragmented platform integration interfaces. The barrier to entering fulfillment data accurately was resulting in SKU handling errors and delays before the daily 1:00 PM shipping cutoff.</p>
+    </div>
+  </div>
+
+  <!-- SOLUTION -->
+  <div class="cs-section">
+    <div class="s-label">UX/UI Solutions</div>
+    <h2>How I <em>Solved It</em></h2>
+    <div class="sol-grid">
+        <div class="sol-item">
+          <div class="sol-num">01</div>
+          <div>
+            <div class="sol-title">Scannable Data Hierarchy</div>
+            <p class="sol-desc">Replaced complex spreadsheets with unified, clean data tables featuring fixed headers, strict grid padding, and color-coded status micro-badges (e.g., In Transit, Fulfilled, Returned).</p>
+          </div>
+        </div>
+        <div class="sol-item">
+          <div class="sol-num">02</div>
+          <div>
+            <div class="sol-title">Simplified Integration Hub</div>
+            <p class="sol-desc">Modeled a one-click connection wizard using card-based structures for external e-commerce integrations, replacing complicated API key copying loops.</p>
+          </div>
+        </div>
+        <div class="sol-item">
+          <div class="sol-num">03</div>
+          <div>
+            <div class="sol-title">Transparent Pricing Visualizer</div>
+            <p class="sol-desc">Structured an interactive bulk/micro-enterprise tier pricing component to provide immediate quote evaluations directly on the portal.</p>
+          </div>
+        </div>
+    </div>
+  </div>
+
+  <!-- MOCKUP PLACEHOLDER -->
+  <div class="cs-section">
+    <div class="s-label">Visual Showcase</div>
+    <h2>High-Fidelity <em>UI Screens</em></h2>
+    <p class="body-text">High-fidelity mockups and screen recordings from the final Figma deliverable.</p>
+    <div class="mockup-placeholder">
+      <div class="mockup-icon">📦</div>
+      <div class="mockup-label">UI Mockups</div>
+      <div class="mockup-sub">Upload your Figma screenshots or exported screens here to complete this section.</div>
+    </div>
+  </div>
+
+  <!-- DELIVERABLES -->
+  <div class="cs-section">
+    <div class="s-label">Core Deliverables</div>
+    <h2>What I <em>Built</em></h2>
+    <p class="body-text">The complete set of UI artifacts delivered to the client and engineering team.</p>
+    <div class="del-grid"><div class="del-pill"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2 6l3 3 5-5"/></svg>Inventory & SKU Management Table UI</div><div class="del-pill"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2 6l3 3 5-5"/></svg>Multi-carrier Live Tracking Layout</div><div class="del-pill"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2 6l3 3 5-5"/></svg>E-commerce Integration Screen</div><div class="del-pill"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2 6l3 3 5-5"/></svg>Client Onboarding Quote Flow</div></div>
+  </div>
+
+</div>
+
+<!-- PREV / NEXT NAV -->
+<div class="case-nav"><a href="omx-flow.html" class="nav-btn"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10 3L5 8l5 5"/></svg>OMX Flow</a><a href="portfolio_3d.html#work" style="font-family:'Syne',sans-serif;font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#8892B0;text-decoration:none;">All Projects</a><a href="siliguri-pharmacy.html" class="nav-btn">Siliguri Pharmacy<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 3l5 5-5 5"/></svg></a></div>
+
+
+</body>
+</html>
