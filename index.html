@@ -3231,6 +3231,16 @@
             placeholder="Describe the problem you're solving, your timeline, and any specific constraints…"></textarea>
         </div>
         <button class="btn-send" id="sendBtn" onclick="handleSend()">Send Message →</button>
+        <div id="contactFallback" class="contact-fallback" style="display:none;margin-top:1.25rem;padding:1rem;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.08);border-radius:10px;font-size:0.825rem;line-height:1.5;color:var(--muted)">
+          <div style="margin-bottom:0.6rem;color:var(--text);font-weight:500">If your mail app didn't open automatically, you can send via webmail:</div>
+          <div style="display:flex;gap:0.5rem;flex-wrap:wrap;margin-bottom:0.6rem">
+            <button onclick="openGmail()" class="fbtn" style="padding:0.35rem 0.75rem;font-size:0.75rem;border-radius:6px;border:1px solid rgba(124,58,237,0.3);background:rgba(124,58,237,0.1);color:#A78BFA;cursor:pointer;font-weight:500">Send via Gmail (Web)</button>
+            <button onclick="openOutlook()" class="fbtn" style="padding:0.35rem 0.75rem;font-size:0.75rem;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer">Send via Outlook Web</button>
+            <button onclick="copyContactEmail()" class="fbtn" style="padding:0.35rem 0.75rem;font-size:0.75rem;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer">Copy Email</button>
+            <button onclick="copyContactMessage()" class="fbtn" style="padding:0.35rem 0.75rem;font-size:0.75rem;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);cursor:pointer">Copy Message</button>
+          </div>
+          <div id="copyStatus" style="color:#A78BFA;font-size:0.75rem;height:12px"></div>
+        </div>
       </div>
     </div>
   </section>
@@ -3320,11 +3330,10 @@
     }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
     document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
-    // ─── SEND ───
-    function handleSend() {
+    function getFormData() {
       const name = document.getElementById('nm').value.trim();
       const email = document.getElementById('em').value.trim();
-      const projectType = document.getElementById('pt').value;
+      const projectType = document.getElementById('pt').value || '';
       const details = document.getElementById('msg').value.trim();
 
       let body = '';
@@ -3335,16 +3344,26 @@
         if (body) body += '\n';
         body += `Project Details:\n${details}`;
       }
+      if (!body) body = 'Hello Alik, I would like to get in touch with you regarding a project.';
 
+      const subject = name ? `Project Inquiry from ${name}` : 'Project Inquiry';
+      return { name, email, projectType, details, body, subject };
+    }
+
+    // ─── SEND ───
+    function handleSend() {
+      const data = getFormData();
       const emailTo = 'aliksarkar906@gmail.com';
-      const subject = encodeURIComponent(name ? `Project Inquiry from ${name}` : 'Project Inquiry');
-      const mailtoUrl = `mailto:${emailTo}?subject=${subject}&body=${encodeURIComponent(body)}`;
+      const mailtoUrl = `mailto:${emailTo}?subject=${encodeURIComponent(data.subject)}&body=${encodeURIComponent(data.body)}`;
 
       const a = document.createElement('a');
       a.href = mailtoUrl;
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
+
+      // Show fallback instructions in case mailto doesn't open
+      document.getElementById('contactFallback').style.display = 'block';
 
       const btn = document.getElementById('sendBtn');
       btn.textContent = 'Redirecting to Mail... ✓';
@@ -3355,6 +3374,35 @@
         btn.style.background = '';
         btn.disabled = false;
       }, 3500);
+    }
+
+    function openGmail() {
+      const data = getFormData();
+      const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=aliksarkar906@gmail.com&su=${encodeURIComponent(data.subject)}&body=${encodeURIComponent(data.body)}`;
+      window.open(gmailUrl, '_blank');
+    }
+
+    function openOutlook() {
+      const data = getFormData();
+      const outlookUrl = `https://outlook.live.com/mail/0/deeplink/compose?to=aliksarkar906@gmail.com&subject=${encodeURIComponent(data.subject)}&body=${encodeURIComponent(data.body)}`;
+      window.open(outlookUrl, '_blank');
+    }
+
+    function copyContactEmail() {
+      navigator.clipboard.writeText('aliksarkar906@gmail.com').then(() => {
+        const status = document.getElementById('copyStatus');
+        status.textContent = 'Email address copied to clipboard!';
+        setTimeout(() => { status.textContent = ''; }, 3000);
+      });
+    }
+
+    function copyContactMessage() {
+      const data = getFormData();
+      navigator.clipboard.writeText(data.body).then(() => {
+        const status = document.getElementById('copyStatus');
+        status.textContent = 'Message draft copied to clipboard!';
+        setTimeout(() => { status.textContent = ''; }, 3000);
+      });
     }
 
     // ── MOBILE MENU ──
